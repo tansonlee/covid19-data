@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import { fetchCumulative, fetchChange } from "./api/api";
-import Cards from "./components/Card/Cards";
+import Cards from "./components/Cards/Cards";
 import Chart from "./components/Chart/Chart";
 import { getProvince } from "./functions";
 

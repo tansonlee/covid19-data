@@ -40,7 +40,7 @@ export const formatDate = date => {
 	dateString += months[dateComponents[1]];
 	dateString += " ";
 	dateString += dateComponents[0];
-	dateString += " ";
+	dateString += ", ";
 	dateString += dateComponents[2];
 	return dateString;
 };
