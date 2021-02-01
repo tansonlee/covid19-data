@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const baseURL = "https://api.opencovid.ca/summary";
-const startDate = "2020-06-01";
+const startDate = "2020-08-01";
 
 export const fetchCumulative = async location => {
 	try {

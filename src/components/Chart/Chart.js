@@ -7,17 +7,11 @@ const Chart = ({ dataSeries }) => {
 		return "Loading...";
 	}
 
-	const numDataPoints = dataSeries.length;
-
-	const dates = dataSeries.map(({ date }, i) =>
-		i % Math.ceil(numDataPoints / 120) === 0 ? formatDate(date) : ""
-	);
-
 	const lineChart =
 		dataSeries.length !== 0 ? (
 			<Line
 				data={{
-					labels: dates,
+					labels: dataSeries.map(({ date }) => formatDate(date)),
 					datasets: [
 						{
 							data: dataSeries.map(data => data.cases),
@@ -47,6 +41,32 @@ const Chart = ({ dataSeries }) => {
 							pointHitRadius: 10,
 						},
 					],
+				}}
+				options={{
+					responsive: true,
+					scales: {
+						xAxes: [
+							{
+								ticks: {
+									autoSkip: true,
+									maxTicksLimit: 20,
+								},
+							},
+						],
+						yAxes: [
+							{
+								ticks: {
+									autoSkip: true,
+									maxTicksLimit: 20,
+									callback: (value, index, values) =>
+										value.toLocaleString(),
+								},
+								scaleLabel: {
+									display: true,
+								},
+							},
+						],
+					},
 				}}
 			/>
 		) : (

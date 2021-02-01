@@ -9,7 +9,7 @@ class App extends React.Component {
 	state = {
 		todayData: {},
 		dataSeries: [],
-		mode: "change", // change or cumulative
+		mode: "cumulative", // change or cumulative
 		location: "canada",
 	};
 
