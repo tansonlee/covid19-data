@@ -3,3 +3,11 @@
 	justify-content: space-around;
 	margin: 0 5%;
 }
+
+.latest-date {
+	font-style: italic;
+	font-weight: 400;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 5px;
+}
