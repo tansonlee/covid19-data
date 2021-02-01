@@ -1,0 +1,7 @@
+.card-wrapper {
+	background-color: aquamarine;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	width: 30%;
+}

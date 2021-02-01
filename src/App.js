@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { fetchCurrent } from "./api/api";
+import Card from "./components/Card/Cards";
+import Chart from "./components/Chart/Chart";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+	state = {
+		todayData: {},
+		dataSeries: [],
+		country: "canada",
+	};
+
+	async componentDidMount() {
+		const fetchedData = await fetchCurrent(this.state.country);
+		this.setState({
+			todayData: fetchedData.todayData,
+			dataSeries: fetchedData.dataSeries,
+		});
+	}
+
+	render() {
+		const { todayData, dataSeries, country } = this.state;
+
+		if (this.state.data === {} || this.dataSeries === []) {
+			return "Loading...";
+		}
+
+		return (
+			<>
+				<h1>Covid-19 Data Tracker</h1>
+				<h2>{country}</h2>
+				<Card {...todayData} />
+				<Chart dataSeries={dataSeries} />
+			</>
+		);
+	}
 }
 
 export default App;
