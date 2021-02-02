@@ -1,36 +1,85 @@
 import "./Cards.css";
 import { formatDate } from "../../functions";
+import SmallChart from "../SmallChart/SmallChart";
 
-const Cards = ({ cases, recoveries, deaths, date }) => {
-	const cardData1 = { title: "Cases", stat: cases };
-	const cardData2 = { title: "Recoveries", stat: recoveries };
-	const cardData3 = { title: "Deaths", stat: deaths };
-
-	if (!date) {
+const Cards = ({ props: { todayData, dataSeries } }) => {
+	if (todayData === {} || dataSeries.length === 0) {
 		return "Loading...";
 	}
 
-	return (
+	const casesChart = (
+		<SmallChart
+			props={{
+				dataSeries: dataSeries.map(({ cases }) => cases),
+				borderCol: "rgba(0, 0, 255, 1)",
+				backgroundCol: "rgba(0, 0, 255, 0.5)",
+			}}
+		/>
+	);
+
+	const recoveriesChart = (
+		<SmallChart
+			props={{
+				dataSeries: dataSeries.map(({ recovered }) => recovered),
+				borderCol: "rgba(0, 255, 0, 1)",
+				backgroundCol: "rgba(0, 255, 0, 0.5)",
+			}}
+		/>
+	);
+
+	const deathsChart = (
+		<SmallChart
+			props={{
+				dataSeries: dataSeries.map(({ deaths }) => deaths),
+				borderCol: "rgba(255, 0, 0, 1)",
+				backgroundCol: "rgba(255, 0, 0, 0.5)",
+			}}
+		/>
+	);
+
+	return dataSeries.length !== 0 ? (
 		<>
-			<p className="latest-date">Latest data from: {formatDate(date)}</p>
+			<p className="latest-date">
+				Latest data from: {formatDate(todayData.date)}
+			</p>
 			<div className="cards-wrapper">
 				<div className="card-wrapper cases-card">
-					<h3 className="card-title">Cases</h3>
-					<p className="card-stat">{cases.toLocaleString()}</p>
+					<h3 className="card-title">Cases Today</h3>
+					<p className="card-stat">
+						{todayData.cases.toLocaleString()}
+					</p>
+					{casesChart}
+					<p className="small-chart-description">
+						Interpolated to see trend
+					</p>
 				</div>
 				<div className="card-wrapper recoveries-card">
-					<h3 className="card-title">Recoveries</h3>
-					<p className="card-stat">{recoveries.toLocaleString()}</p>
+					<h3 className="card-title">Recoveries Today</h3>
+					<p className="card-stat">
+						{todayData.recoveries.toLocaleString()}
+					</p>
+					{recoveriesChart}
+					<p className="small-chart-description">
+						Interpolated to see trend
+					</p>
 				</div>
 				<div className="card-wrapper deaths-card">
-					<h3 className="card-title">Deaths</h3>
-					<p className="card-stat">{deaths.toLocaleString()}</p>
+					<h3 className="card-title">Deaths Today</h3>
+					<p className="card-stat">
+						{todayData.deaths.toLocaleString()}
+					</p>
+					{deathsChart}
+					<p className="small-chart-description">
+						Interpolated to see trend
+					</p>
 				</div>
 				{/* <Card className="cases-card" data={cardData1} />
 				<Card className="recoveries-card" data={cardData2} />
 				<Card className="deaths-card" data={cardData3} /> */}
 			</div>
 		</>
+	) : (
+		"Loading..."
 	);
 };
 

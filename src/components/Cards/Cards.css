@@ -1,5 +1,5 @@
 .card-wrapper {
-	background-color: rgb(241, 244, 243);
+	background-color: rgba(255, 255, 255, 0.1);
 	display: flex;
 	align-items: center;
 	flex-direction: column;
@@ -10,11 +10,15 @@
 
 .card-stat {
 	font-weight: 600;
-	font-size: 30px;
+	font-size: 40px;
+	color: rgba(255, 255, 255, 0.8);
 }
 
 .card-title {
 	font-weight: 400;
+	color: rgba(255, 255, 255, 0.7);
+	font-weight: 300;
+	font-size: 25px;
 }
 
 .cards-wrapper {
@@ -25,13 +29,16 @@
 
 .latest-date {
 	font-style: italic;
-	font-weight: 400;
+	font-weight: 300;
 	display: flex;
 	justify-content: center;
 	margin-bottom: 5px;
+	color: rgba(255, 255, 255, 0.7);
+	word-spacing: 3px;
+	font-size: 18px;
 }
 
-.cases-card {
+/* .cases-card {
 	border: 4px solid blue;
 }
 
@@ -41,4 +48,13 @@
 
 .deaths-card {
 	border: 4px solid red;
+} */
+
+.small-chart-description {
+	margin-left: auto;
+	font-style: italic;
+	font-size: 14px;
+	font-weight: 200;
+	margin-top: 3px;
+	color: rgba(255, 255, 255, 0.6);
 }

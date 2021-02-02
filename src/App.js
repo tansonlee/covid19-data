@@ -3,6 +3,7 @@ import "./App.css";
 import { fetchCumulative, fetchChange } from "./api/api";
 import Cards from "./components/Cards/Cards";
 import Chart from "./components/Chart/Chart";
+import Dropdown from "./components/Dropdown/Dropdown";
 import { getProvince } from "./functions";
 
 class App extends React.Component {
@@ -26,6 +27,13 @@ class App extends React.Component {
 		});
 	};
 
+	changeLocation = async newLocation => {
+		this.setState(
+			{ location: newLocation },
+			async () => await this.fetchData()
+		);
+	};
+
 	async componentDidMount() {
 		await this.fetchData();
 	}
@@ -41,7 +49,8 @@ class App extends React.Component {
 			<>
 				<h1 className="title">COVID-19 Data Tracker</h1>
 				<div className="controls-wrapper">
-					<p className="temp">dropdown here</p>
+					{/* <p className="temp">dropdown here</p> */}
+					<Dropdown onLocationChange={this.changeLocation} />
 					<div className="button-wrapper">
 						<button
 							className={
@@ -76,8 +85,22 @@ class App extends React.Component {
 					</div>
 				</div>
 				<h2 className="location">{getProvince(location)}</h2>
-				<Cards {...todayData} />
+				<Cards props={{ todayData, dataSeries }} />
 				<Chart dataSeries={dataSeries} />
+				<div className="information">
+					<p>Made by Tanson Lee</p>
+					<p>
+						Link to the code on GitHub here:{" "}
+						<a
+							className="code-link"
+							href="https://github.com/tansonlee/covid19-data"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							Code
+						</a>
+					</p>
+				</div>
 			</>
 		);
 	}

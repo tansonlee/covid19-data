@@ -6,10 +6,10 @@ const Chart = ({ dataSeries }) => {
 	if (dataSeries === []) {
 		return "Loading...";
 	}
-
 	const lineChart =
 		dataSeries.length !== 0 ? (
 			<Line
+				className="chart"
 				data={{
 					labels: dataSeries.map(({ date }) => formatDate(date)),
 					datasets: [
@@ -44,12 +44,18 @@ const Chart = ({ dataSeries }) => {
 				}}
 				options={{
 					responsive: true,
+
 					scales: {
 						xAxes: [
 							{
 								ticks: {
 									autoSkip: true,
 									maxTicksLimit: 20,
+									fontColor: "rgba(255, 255, 255, 0.7)",
+								},
+								gridLines: {
+									zeroLineColor: "rgba(255, 255, 255, 0.7)",
+									color: "rgba(255, 255, 255, 0.2)",
 								},
 							},
 						],
@@ -58,14 +64,29 @@ const Chart = ({ dataSeries }) => {
 								ticks: {
 									autoSkip: true,
 									maxTicksLimit: 20,
+									fontColor: "rgba(255, 255, 255, 0.7)",
 									callback: (value, index, values) =>
 										value.toLocaleString(),
 								},
 								scaleLabel: {
 									display: true,
 								},
+								gridLines: {
+									zeroLineColor: "rgba(255, 255, 255, 0.7)",
+									color: "rgba(255, 255, 255, 0.2)",
+								},
 							},
 						],
+					},
+					legend: {
+						labels: {
+							filter: function (item, chart) {
+								// Logic to remove a particular legend item goes here
+								return !item.text.includes("lerped");
+							},
+							fontColor: "rgba(255, 255, 255, 0.9)",
+							fontSize: 16,
+						},
 					},
 				}}
 			/>
@@ -75,7 +96,13 @@ const Chart = ({ dataSeries }) => {
 
 	return (
 		<>
-			<div className="chart-wrapper">{lineChart}</div>
+			<div className="chart-wrapper">
+				<h3 className="chart-title">
+					COVID-19 Data from August 1, 2020 to Present
+				</h3>
+				<p>Click the legend below to hide/unhide data</p>
+				{lineChart}
+			</div>
 		</>
 	);
 };

@@ -1,0 +1,25 @@
+.dropdown {
+	padding: 10px !important;
+	border-radius: 10px;
+	border: 1px solid #00b4d8 !important;
+	transform: scale(1.1);
+}
+
+.dropdown-select {
+	color: rgba(255, 255, 255, 0.8) !important;
+	border-bottom: 1px solid #00b4d8 !important;
+}
+
+.dropdown-select::before {
+	color: rgba(255, 255, 255, 0.8) !important;
+	border-bottom: 0px solid #00b4d8 !important;
+}
+
+.dropdown-select::after {
+	color: rgba(255, 255, 255, 0.8) !important;
+	border-bottom: 0px solid #00b4d8 !important;
+}
+
+.arrow {
+	display: none !important;
+}
