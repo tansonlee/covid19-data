@@ -14,7 +14,7 @@ This was made using the React.js framework. Some libraries that were used are:
 * Material UI: For the dropdown menu
 
 The API used to fetch the data is opencovid. 
-More information can be found on their website here: ![https://opencovid.ca/](https://opencovid.ca/)
+More information can be found on their website here: [https://opencovid.ca/](https://opencovid.ca/)
 
 <img src="assets/image1.png" width="600px">
 

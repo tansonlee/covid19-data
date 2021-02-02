@@ -1,5 +1,5 @@
 {
-	"name": "covid-tracker",
+	"name": "covid19-data-tracker",
 	"version": "0.1.0",
 	"private": true,
 	"dependencies": {
@@ -44,5 +44,5 @@
 	"devDependencies": {
 		"gh-pages": "^3.1.0"
 	},
-	"homepage": "https://tansonlee.github.io/covid19-data"
+	"homepage": "https://tansonlee.github.io/covid19-data-tracker"
 }
