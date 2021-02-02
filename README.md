@@ -1,6 +1,6 @@
 # COVID-19 Data Tracker
 
-The link to the hosted project is here: https://tansonlee.github.io/covid19-data/
+The link to the hosted project is here: https://tansonlee.github.io/covid19-data-tracker/
 
 This web application provides an intuitive UI for Canadians to track COVID-19 data.
 It displays data for cases, recoveries, and deaths both new and total.
