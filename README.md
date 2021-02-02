@@ -18,5 +18,4 @@ More information can be found on their website here: [https://opencovid.ca/](htt
 
 <img src="assets/image1.png" width="600px">
 
-
 <img src="assets/image2.png" width="600px">
