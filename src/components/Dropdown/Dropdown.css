@@ -6,17 +6,17 @@
 }
 
 .dropdown-select {
-	color: rgba(255, 255, 255, 0.8) !important;
+	color: rgba(255, 255, 255, 0.9) !important;
 	border-bottom: 1px solid #00b4d8 !important;
 }
 
 .dropdown-select::before {
-	color: rgba(255, 255, 255, 0.8) !important;
+	color: rgba(255, 255, 255, 0.9) !important;
 	border-bottom: 0px solid #00b4d8 !important;
 }
 
 .dropdown-select::after {
-	color: rgba(255, 255, 255, 0.8) !important;
+	color: rgba(255, 255, 255, 0.9) !important;
 	border-bottom: 0px solid #00b4d8 !important;
 }
 
