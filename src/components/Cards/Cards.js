@@ -2,7 +2,7 @@ import "./Cards.css";
 import { formatDate } from "../../functions";
 import SmallChart from "../SmallChart/SmallChart";
 
-const Cards = ({ props: { todayData, dataSeries } }) => {
+const Cards = ({ props: { todayData, dataSeries, mode } }) => {
 	if (todayData === {} || dataSeries.length === 0) {
 		return "Loading...";
 	}
@@ -44,7 +44,9 @@ const Cards = ({ props: { todayData, dataSeries } }) => {
 			</p>
 			<div className="cards-wrapper">
 				<div className="card-wrapper cases-card">
-					<h3 className="card-title">Cases Today</h3>
+					<h3 className="card-title">
+						{mode === "cumulative" ? "Total Cases" : "Cases Today"}
+					</h3>
 					<p className="card-stat">
 						{todayData.cases.toLocaleString()}
 					</p>
@@ -54,7 +56,11 @@ const Cards = ({ props: { todayData, dataSeries } }) => {
 					</p>
 				</div>
 				<div className="card-wrapper recoveries-card">
-					<h3 className="card-title">Recoveries Today</h3>
+					<h3 className="card-title">
+						{mode === "cumulative"
+							? "Total Recoveries"
+							: "Recoveries Today"}
+					</h3>
 					<p className="card-stat">
 						{todayData.recoveries.toLocaleString()}
 					</p>
@@ -64,7 +70,11 @@ const Cards = ({ props: { todayData, dataSeries } }) => {
 					</p>
 				</div>
 				<div className="card-wrapper deaths-card">
-					<h3 className="card-title">Deaths Today</h3>
+					<h3 className="card-title">
+						{mode === "cumulative"
+							? "Total Deaths"
+							: "Deaths Today"}
+					</h3>
 					<p className="card-stat">
 						{todayData.deaths.toLocaleString()}
 					</p>

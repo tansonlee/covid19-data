@@ -39,7 +39,7 @@ class App extends React.Component {
 	}
 
 	render() {
-		const { todayData, dataSeries, location } = this.state;
+		const { todayData, dataSeries, location, mode } = this.state;
 
 		if (this.state.data === {} || this.dataSeries === []) {
 			return "Loading...";
@@ -84,7 +84,7 @@ class App extends React.Component {
 					</div>
 				</div>
 				<h2 className="location">{getProvince(location)}</h2>
-				<Cards props={{ todayData, dataSeries }} />
+				<Cards props={{ todayData, dataSeries, mode }} />
 				<Chart dataSeries={dataSeries} />
 				<div className="information">
 					<p>Made by Tanson Lee with React.js</p>
