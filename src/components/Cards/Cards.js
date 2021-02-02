@@ -12,7 +12,7 @@ const Cards = ({ props: { todayData, dataSeries, mode } }) => {
 			props={{
 				dataSeries: dataSeries.map(({ cases }) => cases),
 				borderCol: "rgba(0, 0, 255, 1)",
-				backgroundCol: "rgba(0, 0, 255, 0.5)",
+				backgroundCol: "rgba(0, 0, 255, 0.3)",
 			}}
 		/>
 	);
@@ -22,7 +22,7 @@ const Cards = ({ props: { todayData, dataSeries, mode } }) => {
 			props={{
 				dataSeries: dataSeries.map(({ recovered }) => recovered),
 				borderCol: "rgba(0, 255, 0, 1)",
-				backgroundCol: "rgba(0, 255, 0, 0.5)",
+				backgroundCol: "rgba(0, 255, 0, 0.3)",
 			}}
 		/>
 	);
@@ -32,7 +32,7 @@ const Cards = ({ props: { todayData, dataSeries, mode } }) => {
 			props={{
 				dataSeries: dataSeries.map(({ deaths }) => deaths),
 				borderCol: "rgba(255, 0, 0, 1)",
-				backgroundCol: "rgba(255, 0, 0, 0.5)",
+				backgroundCol: "rgba(255, 0, 0, 0.3)",
 			}}
 		/>
 	);
