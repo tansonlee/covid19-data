@@ -49,7 +49,6 @@ class App extends React.Component {
 			<>
 				<h1 className="title">COVID-19 Data Tracker</h1>
 				<div className="controls-wrapper">
-					{/* <p className="temp">dropdown here</p> */}
 					<Dropdown onLocationChange={this.changeLocation} />
 					<div className="button-wrapper">
 						<button
@@ -88,9 +87,10 @@ class App extends React.Component {
 				<Cards props={{ todayData, dataSeries }} />
 				<Chart dataSeries={dataSeries} />
 				<div className="information">
-					<p>Made by Tanson Lee</p>
-					<p>
-						Link to the code on GitHub here:{" "}
+					<p>Made by Tanson Lee with React.js</p>
+					<p className="smaller-text">
+						Link to the code and more information about this project
+						on GitHub here:{" "}
 						<a
 							className="code-link"
 							href="https://github.com/tansonlee/covid19-data"

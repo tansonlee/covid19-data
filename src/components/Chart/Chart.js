@@ -80,7 +80,7 @@ const Chart = ({ dataSeries }) => {
 					},
 					legend: {
 						labels: {
-							filter: function (item, chart) {
+							filter: (item, chart) => {
 								// Logic to remove a particular legend item goes here
 								return !item.text.includes("lerped");
 							},

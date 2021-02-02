@@ -73,9 +73,6 @@ const Cards = ({ props: { todayData, dataSeries } }) => {
 						Interpolated to see trend
 					</p>
 				</div>
-				{/* <Card className="cases-card" data={cardData1} />
-				<Card className="recoveries-card" data={cardData2} />
-				<Card className="deaths-card" data={cardData3} /> */}
 			</div>
 		</>
 	) : (
