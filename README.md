@@ -16,5 +16,5 @@ This was made using the React.js framework. Some libraries that were used are:
 The API used to fetch the data is opencovid. 
 More information can be found on their website here: [https://opencovid.ca/](https://opencovid.ca/)
 
-<img src="assets/image1.png" width="600px">
-<img src="assets/image2.png" width="600px">
+<img src="assets/image1.png" width="800px">
+<img src="assets/image2.png" width="800px">
