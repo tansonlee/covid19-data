@@ -19,3 +19,5 @@ The API used to fetch the data is opencovid.
 More information can be found on their website here: [https://opencovid.ca/](https://opencovid.ca/)
 
 <img src="assets/photo.png" width="800px">
+
+<img src="assets/example.png" width="800px">
